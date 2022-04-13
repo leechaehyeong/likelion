@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="Index.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -51,11 +52,51 @@
         </div>
       </nav>
 
+      <body id="back">
+        <input id="darkMode" class="btn" type="button" value="다크모드" onclick="setDarkmode()">
+        <!--해당 태그에 대한 접근을 할 때, body 태그 또한 id 속성을 부여하며 함수와 식별자의 이름이 동일한 것은 충돌을 유발합니다.-->
+        <input id="whiteMode" class="btn" type="button" value="라이트모드" onclick="setLightmode();">
+    </body>
+
+    <script>
+      var index = 0;
+      window.onload = function(){
+        slideShow();
+        function slideShow() {
+    var i;
+    var x = document.getElementsByClassName("slide");  
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    index++;
+    if (index > x.length) {
+        index = 1;  
+    }   
+    x[index-1].style.display = "block";  
+    setTimeout(slideShow, 4000);  
+ 
+}
+    }
+
+    </script>
+    <style>
+      .slide {
+          width: auto; height: auto;
+          max-width: 300px;
+          max-height: 300px;
+          margin-right: auto;
+          margin-left: auto;
+      }
+      </style>
+
     <div class = "introduce">       
         <h1> 이채형의 자기소개 </h1>
-        <br/>
-
-    <img class="content-image" src="main.png">
+    </br>
+    <img class="slide" src="static/main.png">
+    <img class="slide" src="static/main1.jpg">
+    <img class="slide" src="static/main2.jpg">
+    <img class="slide" src="static/main3.jpg">
+    <img class="slide" src="static/main5.jpg">
     </div>
 
     <div class="content">
@@ -108,7 +149,7 @@
     
         <p> - 만화보기 </p>>
         <a href="https://youtu.be/2idr1NkxV1o"><img class="content-image" src="anime.jpg"></a>
-        <a href="https://youtu.be/ggcla5KBjrI"><img class="content-image" src="hxh .jpg"></a>
+        <a href="https://youtu.be/ggcla5KBjrI"><img class="content-image" src="static/hxh.png"></a>
 
         <p>
             <br/>
@@ -116,9 +157,14 @@
             <br/>
             - 잠자기 
             <br/>
-            - 게임하기 </p>
-            <img class="content-image" src="lol.png.crdownload">
+            - 게임하기 
+            <br/>
+          </p>
+
+
             <img class="content-image" src="maxresdefault.jpg">
+            <br/>
+            <a href="https://namu.wiki/w/Overcooked!%20%EC%8B%9C%EB%A6%AC%EC%A6%88?from=Overcooked%21">오버쿡드 같이 하실분? </a>
             <p>
             <br/>
             - 방탈출하기
@@ -137,6 +183,7 @@
 
     </div>
 </div>
+
 
 
 

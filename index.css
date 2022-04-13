@@ -1,7 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800&display=swap');
 
+setWebDisplayAppearance-JS
+
+
+
+.btn {
+    float: right;
+    font-size: 15px;
+    text-align: center;
+    background: transparent;
+    color: black;
+    cursor: pointer
+}
+
+.dark-mode {
+    background: #374151;
+    color: #fff;
+  }
+
 * {
     font-family: 'Montserrat';
+    background-color: floralwhite;
 }
 
 body,h1,h2 {
@@ -18,12 +37,10 @@ h1 {
     text-decoration:lightgreen;
     font-weight:bold;
     text-align: right;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .introduce {
-    margin:0px;
-    padding:0px;
     width: 610px;
     padding: 30px;
     margin: 30px;
@@ -58,7 +75,7 @@ p {
 }
 
 .content-image {
-    width: 50%;
+    width: 40%;
 }
 
 .space {
@@ -67,4 +84,8 @@ p {
   
 .act-image {
     width: 10%;
+}
+
+. slide {
+    width: 80px;
 }
