@@ -12,6 +12,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script type="text/javascript" src="Index.js"></script>
     <title>Document</title>
+    <style>
+      .slide {
+          width: auto; height: auto;
+          max-width: 300px;
+          max-height: 300px;
+          margin-right: auto;
+          margin-left: auto;
+      }
+      </style>
 </head>
 <body>
     
@@ -52,46 +61,16 @@
         </div>
       </nav>
 
-      <body id="back">
-        <input id="darkMode" class="btn" type="button" value="다크모드" onclick="setDarkmode()">
-        <!--해당 태그에 대한 접근을 할 때, body 태그 또한 id 속성을 부여하며 함수와 식별자의 이름이 동일한 것은 충돌을 유발합니다.-->
+      <div id="back">
+        <input id="darkMode" class="btn" type="button" value="다크모드" onclick="setDarkmode();">
         <input id="whiteMode" class="btn" type="button" value="라이트모드" onclick="setLightmode();">
-    </body>
+      </div>
 
-    <script>
-      var index = 0;
-      window.onload = function(){
-        slideShow();
-        function slideShow() {
-    var i;
-    var x = document.getElementsByClassName("slide");  
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";  
-    }
-    index++;
-    if (index > x.length) {
-        index = 1;  
-    }   
-    x[index-1].style.display = "block";  
-    setTimeout(slideShow, 4000);  
- 
-}
-    }
 
-    </script>
-    <style>
-      .slide {
-          width: auto; height: auto;
-          max-width: 300px;
-          max-height: 300px;
-          margin-right: auto;
-          margin-left: auto;
-      }
-      </style>
 
     <div class = "introduce">       
         <h1> 이채형의 자기소개 </h1>
-    </br>
+    <br/>
     <img class="slide" src="static/main.png">
     <img class="slide" src="static/main1.jpg">
     <img class="slide" src="static/main2.jpg">
@@ -122,9 +101,7 @@
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <title>Document</title>
                 </head>
-                <body>
-                    
-                </body>
+                
                 </html>
             
             </p>   
@@ -142,41 +119,51 @@
             멋쟁이사자처럼 파이팅!! 아자자자자뵹
 
         </p>   
-
+</div>
  
     <div class = "content">
     <h2>like</h2>
     
-        <p> - 만화보기 </p>>
-        <a href="https://youtu.be/2idr1NkxV1o"><img class="content-image" src="anime.jpg"></a>
-        <a href="https://youtu.be/ggcla5KBjrI"><img class="content-image" src="static/hxh.png"></a>
+        <p> - 만화보기 </p>
+        <div class="animae">
+          <a href="https://youtu.be/2idr1NkxV1o"><img id="img" class="content-image" src="anime.jpg"></a>
+          <br/>
+          <button onclick="nextImg()">next</button>
+          </div>
 
         <p>
             <br/>
-            - 뭐 먹기
+            - 뭐 먹기 : 샤브샤브를 제일 좋아합니다.
             <br/>
-            - 잠자기 
+            - 잠자기 : 잠은 무조건 8시간 이상!
             <br/>
-            - 게임하기 
+            - 독서 : 우빛속, 호밀밭의 파수꾼 제일 좋아해요. 월 1회 독서모임도 하는중
             <br/>
+            - 중국어 공부 : 중국어가 재미있어서 공부합니다.. 의사소통 조금 가능!
+            <br/>
+            - 발레 하기 : 최근에 시작했어용 ~
+            <br/>
+            - 게임하기 : 롤, 옵치, 배그, 오버쿡드 ... 요즘은 오버쿡드에 빠져 사는중
           </p>
 
 
-            <img class="content-image" src="maxresdefault.jpg">
+          <a href="https://namu.wiki/w/Overcooked!%20%EC%8B%9C%EB%A6%AC%EC%A6%88?from=Overcooked%21"><img class="content-image" src="maxresdefault.jpg"></a>
             <br/>
-            <a href="https://namu.wiki/w/Overcooked!%20%EC%8B%9C%EB%A6%AC%EC%A6%88?from=Overcooked%21">오버쿡드 같이 하실분? </a>
+            오버쿡드 같이 하실분?
             <p>
             <br/>
-            - 방탈출하기
+            - 방탈출하기 : 장치 비중 높은 방탈출 좋아합니다!!
             <br/>
-            - 책 읽기
-            <br/>
-            - 드라마 보기
+            - 드라마 보기 : 그냥 나오는 드라마 다 봅니다. k-drama 최공
 
             </p> 
     </div>
 
-    <div class = "content">
+    <!-- <button onclick="onDisplay()">더보기 </button> -->
+    <!-- <div class = "sns" id="nonDiv" style="display: none;"
+    <button onclick="offDisplay()">숨기기 </button> -->
+
+    
         <h2>act</h2>
         <p> ▼ 제 인스타가 궁금하시다면 ▼ </p>
         <a href="https://www.instagram.com/czdore/"><img class="act-image" src="insta.jpg"></a>
@@ -185,6 +172,35 @@
 </div>
 
 
+<script>
+  var index = 0;
+  window.onload = function(){
+    slideShow();
+    function slideShow() {
+var i;
+var x = document.getElementsByClassName("slide");  
+for (i = 0; i < x.length; i++) {
+   x[i].style.display = "none";  
+}
+index++;
+if (index > x.length) {
+    index = 1;  
+}   
+x[index-1].style.display = "block";  
+setTimeout(slideShow, 4000);  
+
+}
+  }
+
+function onDisplay() {
+    $('#sns').show();
+}
+
+function offDisplay() {
+    $('#sns').hide();
+}
+
+</script>
 
 
 </body>
