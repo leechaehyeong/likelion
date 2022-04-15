@@ -129,7 +129,7 @@
           <a href="https://youtu.be/2idr1NkxV1o"><img id="img" class="content-image" src="anime.jpg"></a>
           <br/>
           <button onclick="nextImg()">next</button>
-          </div>
+        </div>
 
         <p>
             <br/>
@@ -159,11 +159,10 @@
             </p> 
     </div>
 
-    <!-- <button onclick="onDisplay()">더보기 </button> -->
-    <!-- <div class = "sns" id="nonDiv" style="display: none;"
-    <button onclick="offDisplay()">숨기기 </button> -->
+    <button id = "plusBtn" onclick="onDisplay()">더보기 </button>
+    <button id = "minusBtn"onclick="offDisplay()">숨기기 </button>
+    <div class = "sns" id="nonDiv" style="display: none;">
 
-    
         <h2>act</h2>
         <p> ▼ 제 인스타가 궁금하시다면 ▼ </p>
         <a href="https://www.instagram.com/czdore/"><img class="act-image" src="insta.jpg"></a>
@@ -193,11 +192,18 @@ setTimeout(slideShow, 4000);
   }
 
 function onDisplay() {
-    $('#sns').show();
+    // document.getElementById("nonDiv").style.display = "block"; 
+    // document.getElementById("plusBtn").style.display = "none"; 
+    // document.getElementById("minusBtn").style.display = "block"; 
+    document.getElementById("nonDiv").style.display = "block";  
+    document.getElementById("plusBtn").style.visibility = "hidden"; 
+    document.getElementById("minusBtn").style.visibility = "visible"; 
 }
 
 function offDisplay() {
-    $('#sns').hide();
+  document.getElementById("nonDiv").style.display = "none";  
+  document.getElementById("minusBtn").style.visibility = "hidden";
+  document.getElementById("plusBtn").style.visibility = "visible"; 
 }
 
 </script>
